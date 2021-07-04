@@ -1,0 +1,50 @@
+/* Menu page styling*/
+
+.info {
+  text-align: none;
+}
+.info h1 {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: #4e576e;
+  border-style: solid;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h2.subtitle {
+  color: rgb(78, 87, 110, 0.75);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*menu section titles*/
+.info h3 {
+  text-decoration: none;
+  padding: 1em;
+  color: rgb(88, 106, 107);
+}
+
+/*list of menu items*/
+.info ul {
+  text-decoration: none;
+  color: rgb(156, 125, 125);
+  border-style: none;
+}
+
+/*individual menu items*/
+.info li {
+  padding: 0.5em;
+}
+
+/*give background color*/
+.background {
+  background: rgb(216, 220, 242);
+}

@@ -1,0 +1,59 @@
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": {
+      "drinks": [
+        {
+          "id": 1,
+          "price": "8.99",
+          "name": "Blue Moon",
+          "type": "drink"
+        },
+        {
+          "id": 2,
+          "price": "9.99",
+          "name": "Moscow Morning",
+          "type": "drink"
+        },
+        {
+          "id": 3,
+          "price": "7.30",
+          "name": "Rum and Coke",
+          "type": "drink"
+        },
+        {
+          "id": 4,
+          "price": "8.50",
+          "name": "Long Island Mimosa",
+          "type": "drink"
+        }
+      ],
+      "food": [
+        {
+          "id": 1,
+          "price": "5.99",
+          "name": "Cajun Fries",
+          "type": "food"
+        },
+        {
+          "id": 2,
+          "price": "6.50",
+          "name": "Crab Cakes",
+          "type": "food"
+        },
+        {
+          "id": 3,
+          "price": "8.00",
+          "name": "Caviar",
+          "type": "food"
+        }
+      ]
+    },
+    "support": {
+      "url": "https://reqres.in/#support-heading",
+      "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+  }
+  
