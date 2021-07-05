@@ -1,16 +1,18 @@
 import React from 'react';
 import './home.css';
 import Parent from "../../services/CheersParent.js";
+import bar from './home_bar.jpg'; 
 
 const Home = props => {
+  
   return (
-    <div>
+    <div class="info">
       <div class="info">
       <h1>Step-Brothers</h1>
     </div>
 
-    <div onmouseover="mouseOver(this)">
-      <img id="pic" src="./home_bar.jpg" class="align-center medium" />
+    <div >
+      <img src={bar} class="align-center medium" />
     </div>
 
     <div>
@@ -20,7 +22,7 @@ const Home = props => {
       <Parent />
       <hr />
     </div>
-    <main>
+    <main >
       <article>
         Location
         <p class="description">
