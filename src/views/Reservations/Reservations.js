@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './reservations.css';
 import { Header, SubHeader } from "../../services/Header.js";
 
+import DrinkList from "../../components/Main/ReservationList";
+import * as Env from "../../environments";
+import Parse from "parse";
+import ReservationList from '../../components/Main/ReservationList';
+
+Parse.initialize(Env.APPLICATION_ID, Env.JAVASCRIPT_KEY);
+Parse.serverURL = Env.SERVER_URL;
+
 const Reservations = props => {
 
   return (
@@ -32,47 +40,8 @@ const Reservations = props => {
         The Step-Brothers Team
       </p>
 
-      <form action="successful_submit.html">
-       
-        <h5><b>Name: </b></h5>
-        <input type="text" placeholder="Enter Name" required />
-
-        
-        <h5><b>Email: </b></h5>
-        <input type="email" placeholder="Enter Email" required />
-
-       
-        <h5><b>Contact Number: </b></h5>
-        <input type="text" placeholder="Enter Contact Number" required />
-
-       
-        <h5><b>Number of People:</b></h5>
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          min="1"
-          max="20"
-          placeholder="1"
-          required
-        />
-
-       
-        <h5><b>Date: </b></h5>
-        <input type="date" required />
-
-       
-        <h5><b>Time: </b></h5>
-        <input type="time" required />
-
-     
-        <h5><b>Additional comments or questions: </b></h5>
-        <textarea name="comments" cals="250" rows="5"></textarea>
-        <br /><br />
-
-        
-        <input type="submit" value="Submit" />
-      </form>
+      <ReservationList />
+      
     </div>
   );
 };
