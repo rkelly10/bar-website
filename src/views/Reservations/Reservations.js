@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './reservations.css';
-import { Header, SubHeader } from "../../services/Header.js";
 
-import DrinkList from "../../components/Main/ReservationList";
 import * as Env from "../../environments";
 import Parse from "parse";
 import ReservationList from '../../components/Main/ReservationList';

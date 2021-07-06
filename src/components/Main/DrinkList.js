@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {
   getAllDrinks
-} from "../../Common/Services/LearnService";
+} from "../../services/LearnService";
 
 /* STATEFUL PARENT COMPONENT */
 const DrinkList = () => {
   // Variables in the state to hold data
-
 
   const [drinks, setDrinks] = useState([]);
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   getAllFoods
-} from "../../Common/Services/LearnService";
+} from "../../services/LearnService";
 
 /* STATEFUL PARENT COMPONENT */
 const FoodList = () => {

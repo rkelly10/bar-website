@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './menu.css';
-import { Header, SubHeader } from "../../services/Header.js";
+import { Header, SubHeader } from "../../components/Main/Header.js";
 
 import DrinkList from "../../components/Main/DrinkList";
 import FoodList from "../../components/Main/FoodList";

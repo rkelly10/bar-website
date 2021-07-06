@@ -3,7 +3,7 @@ import './about.css';
 
 const About = props => {
   return (
-    <body class="background">
+    <body >
 
     <div class="info">
       <h1>Step-Brothers</h1>

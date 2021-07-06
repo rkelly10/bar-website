@@ -4,7 +4,7 @@ import {
   getReservationById,
   getAllReservations,
   removeReservation
-} from "../../Common/Services/LearnService";
+} from "../../services/LearnService";
 import ReservationForm from "./ReservationForm";
 
 /* STATEFUL PARENT COMPONENT */
