@@ -1,0 +1,41 @@
+/* About page styling*/
+
+.info {
+  text-align: center;
+}
+.info h1 {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: #4e576e;
+  border-style: solid;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.info p {
+  text-decoration: none;
+  display: block;
+  padding: 2em;
+  background: rgb(124, 130, 161);
+  color: white;
+  border-style: groove;
+  text-align: left;
+}
+
+h2.subtitle {
+  color: rgb(78, 87, 110, 0.75);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*give background color*/
+.background {
+  background: rgb(216, 220, 242);
+}
