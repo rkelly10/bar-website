@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Parse from "parse";
 import { doUserLogIn } from "./AuthService";
 
 
@@ -14,7 +13,7 @@ export const LoginForm = () => {
         if (isSubmitted) {
             doUserLogIn(username, password)
         }
-      }, [isSubmitted]);
+      }, [isSubmitted,username, password]);
 
 
       const onUsernameChange = (e) => {

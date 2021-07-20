@@ -5,7 +5,7 @@ export default function CheersParent() {
     alert("Cheers!");
   }
   return (
-    <div class="Cheers">
+    <div className="Cheers">
       <Child data="Have a Pint!" onChildClick={clickAlert} />
     </div>
   );

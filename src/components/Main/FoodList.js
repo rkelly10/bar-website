@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   getAllFoods
-} from "../../services/LearnService";
+} from "../../services/FoodService";
 
 /* STATEFUL PARENT COMPONENT */
 const FoodList = () => {
@@ -24,11 +24,11 @@ const FoodList = () => {
     <div>
         {foods.length > 0 && (
           <ul>
-            {foods.map((food) => (
-              <div>
-                <span>
+            {foods.map((food, i) => (
+              <div >
+                <span >
                   {/* Using getter for lesson Object to display name */}
-                  <li key={food.id}>{food.get("name")} | {food.get("price")}</li>{" "}
+                  <li key={food.objectId} > {food.get("name")} | {food.get("price")}</li>{" "}
                   {/* Button with inline click handler to obtain 
                   instance of lesson for remove state variable*/}
                 </span>

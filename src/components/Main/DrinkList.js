@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   getAllDrinks
-} from "../../services/LearnService";
+} from "../../services/DrinkService";
 
 /* STATEFUL PARENT COMPONENT */
 const DrinkList = () => {

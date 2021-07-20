@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthService";
 import AuthForm from "./AuthForm";
+import Parse from "parse";
 
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState({
@@ -45,6 +46,37 @@ const AuthRegister = () => {
     console.log("submitted: ", e.target);
     setAdd(true);
   };
+
+  const [flag, setFlag] = useState(false);
+
+  const isLoggedIn = Parse.User.current();
+
+
+  useEffect(() => {
+    if (isLoggedIn) {
+        console.log("BAD");
+        setFlag(false);
+    }
+    else {
+        console.log("GOOD");
+        setFlag(true);
+    }
+  }, [isLoggedIn, flag]);
+
+  if(!flag) {
+    return (
+      <div className="info">
+      <h1>Step-Brothers</h1>
+        {
+          <div>
+            <p>
+          Cannot Register new account while logged into new account. Log out to make new account.
+          </p>
+          </div>
+        }
+      </div>
+    );
+  }
 
   return (
     <div>

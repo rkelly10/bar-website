@@ -32,13 +32,6 @@ h2.subtitle {
   color: rgb(88, 106, 107);
 }
 
-.info p {
-  text-decoration: none;
-  color: rgb(156, 125, 125);
-  border-style: none;
-  background-color: aliceblue;
-}
-
 /*list of menu items*/
 .info ul {
   text-decoration: none;
@@ -54,10 +47,4 @@ h2.subtitle {
 /*give background color*/
 .background {
   background: rgb(216, 220, 242);
-}
-
-.list {
-  text-decoration: none;
-  color: rgb(156, 125, 125);
-  border-style: none;
 }

@@ -1,7 +1,7 @@
 
 export default function CheersChild({ data, onChildClick }) {
     return (
-      <div class="child">
+      <div className="child">
         <button onClick={onChildClick}>{data}</button>
       </div>
     );

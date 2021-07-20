@@ -3,11 +3,10 @@ import './about.css';
 
 const About = props => {
   return (
-    <body >
 
-    <div class="info">
+    <div className="info">
       <h1>Step-Brothers</h1>
-      <h2 class="subtitle">Our Story</h2>
+      <h2 className="subtitle">Our Story</h2>
 
       <p>
         Located on Eddy Street Commons, Step-Brothers Bar & Grill was founded in
@@ -18,7 +17,6 @@ const About = props => {
         and some good, hearty food.
       </p>
     </div>
-  </body>
   );
 };
 
