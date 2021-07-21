@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './menu.css';
 import { Header, SubHeader } from "../../components/Main/Header.js";
 
@@ -14,10 +14,10 @@ const Menu = props => {
 
   return (
     <div>
-     <div class="info">
+     <div className="info">
     <Header title="STEP-BROTHERS">
   </Header>
-  <h2 class="subtitle">Bar Menu</h2>
+  <h2 className="subtitle">Bar Menu</h2>
   <SubHeader title="Drinks"/>
   <DrinkList />
     <SubHeader title="Food"/>

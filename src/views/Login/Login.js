@@ -1,17 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Parse from "parse";
 import { Link } from "react-router-dom";
 import {LoginForm} from "../../components/Auth/AuthLogin"
+import { doUserLogOut } from '../../components/Auth/AuthService';
 
 
 import './login.css';
 
 const Login = props => {
-  return (
-    <body >
 
-    <div class="info">
+  const [flag, setFlag] = useState(false);
+
+  const isLoggedIn = Parse.User.current();
+
+
+  useEffect(() => {
+    if (isLoggedIn) {
+        console.log("BAD");
+        setFlag(false);
+    }
+    else {
+        console.log("GOOD");
+        setFlag(true);
+    }
+  }, [isLoggedIn, flag]);
+
+  function handleLogOut(e) {
+    e.preventDefault();
+    doUserLogOut();
+    console.log('Log Out.');
+  }
+
+
+  if(!flag) {
+    return (
+      <div className="info">
       <h1>Step-Brothers</h1>
-      <h2 class="subtitle">Login to Your Account</h2>
+        {
+          <div>
+            <p>
+          Click below to Log Out of your account.
+          </p>
+          <button onClick={handleLogOut}>Log Out</button>
+          </div>
+        }
+      </div>
+    );
+  }
+
+  return (
+    <div className="info">
+      <h1>Step-Brothers</h1>
+      <h2 className="subtitle">Login to Your Account</h2>
 
       <p>
         Enter username and password to Login.
@@ -24,8 +64,8 @@ const Login = props => {
       <Link to="/Register">
         <button>Register</button>
       </Link>
+      < br />
     </div>
-  </body>
   );
 };
 

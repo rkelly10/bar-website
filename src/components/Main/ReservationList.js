@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
   createReservation,
-  getReservationById,
-  getAllReservations,
-  removeReservation
-} from "../../services/LearnService";
+  getAllReservations
+} from "../../services/ReservationService";
 import ReservationForm from "./ReservationForm";
 
 /* STATEFUL PARENT COMPONENT */
@@ -13,13 +11,10 @@ const ReservationList = () => {
 
 
   const [reservations, setReservations] = useState([]);
-  const [reservation, setReservation] = useState([]);
   const [name, setName] = useState();
   const [date, setDate] = useState();
   const [time, setTime] = useState();
   const [number, setNumber] = useState();
-
-  const [drinks, setDrinks] = useState([]);
 
   // UseEffect to run when the page loads to
   // obtain async data and render
@@ -50,7 +45,7 @@ const ReservationList = () => {
       });
     }
 
-  }, [name, reservations, add, remove]);
+  }, [name, date, number, time, reservations, add, remove]);
 
   // Handler to handle event passed from child submit button
   const onClickHandler = (e) => {

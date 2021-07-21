@@ -22,6 +22,11 @@ export const createUser = (newUser) => {
 };
 
 export const doUserLogIn = async function (username, password) {
+
+  function refreshPage(){ 
+    window.location.reload(); 
+  }
+
   // Note that these values come from state variables that we've declared before
   const usernameValue = username;
   const passwordValue = password;
@@ -29,12 +34,12 @@ export const doUserLogIn = async function (username, password) {
     .then(async (loggedInUser) => {
       // logIn returns the corresponding ParseUser object
       alert(
-        'Success!',
-        `User ${loggedInUser.get('username')} has successfully signed in!`,
+        `User ${loggedInUser.get('username')} has successfully signed in!`
       );
       // To verify that this is in fact the current user, currentAsync can be used
       const currentUser = await Parse.User.currentAsync();
       console.log(loggedInUser === currentUser);
+      refreshPage();
       return true;
     })
     .catch((error) => {
@@ -44,4 +49,32 @@ export const doUserLogIn = async function (username, password) {
     });
 };
 
+export const doUserLogOut = async function () {
+  function refreshPage(){ 
+    window.location.reload(); 
+  }
+
+  return await Parse.User.logOut()
+    .then(async () => {
+      // To verify that current user is now empty, currentAsync can be used
+      const currentUser = await Parse.User.currentAsync();
+      if (currentUser === null) {
+        alert('Log out sucessful!');
+      }
+      refreshPage();
+      return true;
+    })
+    .catch((error) => {
+      alert('No user currently logged in', error.message);
+      return false;
+    });
+};
+
+export const getCurrentUser = async function () {
+  return await Parse.User.currentAsync()
+    .catch((error) => {
+      console.log('No user currently logged in', error.message);
+      return false;
+    });
+};
 

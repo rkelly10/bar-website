@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './reservations.css';
 
 import * as Env from "../../environments";
@@ -10,10 +10,11 @@ Parse.serverURL = Env.SERVER_URL;
 
 const Reservations = props => {
 
+
   return (
-    <div class="info">
+    <div className="info">
       <h1>Step-Brothers</h1>
-      <h2 class="subtitle">Make a Reservation</h2>
+      <h2 className="subtitle">Make a Reservation</h2>
 
       <p>
         Hi there!
