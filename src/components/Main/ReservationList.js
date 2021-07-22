@@ -3,6 +3,9 @@ import {
   createReservation,
   getAllReservations
 } from "../../services/ReservationService";
+
+import {getCurrentUserName} from "../Auth/AuthService"
+
 import ReservationForm from "./ReservationForm";
 
 /* STATEFUL PARENT COMPONENT */
@@ -12,6 +15,7 @@ const ReservationList = () => {
 
   const [reservations, setReservations] = useState([]);
   const [name, setName] = useState();
+  const [username, setUsername] = useState();
   const [date, setDate] = useState();
   const [time, setTime] = useState();
   const [number, setNumber] = useState();
@@ -19,6 +23,10 @@ const ReservationList = () => {
   // UseEffect to run when the page loads to
   // obtain async data and render
   useEffect(() => {
+
+    getCurrentUserName().then((currentUsername) => {
+      setUsername(currentUsername);
+    });
 
     getAllReservations().then((reservations) => {
       console.log(reservations);
@@ -103,6 +111,22 @@ const ReservationList = () => {
                   <li key={reservation.id}> {reservation.get("date")} {reservation.get("time")} : Party of {reservation.get("number")}</li>{" "}
                   {/* Button with inline click handler to obtain 
                   instance of reservation for remove state variable*/}
+                </span>
+              </div>
+            ))}
+          </ul>
+        )}
+      </div>
+      <h2>Your Reservations</h2>
+      <div>
+        {reservations.length > 0 && (
+          <ul>
+            {reservations.map((reservation) => (
+              <div>
+                <span>
+                  { reservation.get("username") === username && (
+                    <b>{reservation.get("date")} {reservation.get("time")} : Party of {reservation.get("number")}</b>
+                  )}
                 </span>
               </div>
             ))}

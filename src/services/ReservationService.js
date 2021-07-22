@@ -3,7 +3,7 @@ import Parse from "parse";
 //RESERVATIONS
 
 // CREATE operation - new Reservation with Name
-export const createReservation = (Name, Date, Time, Number) => {
+export const createReservation = async function (Name, Date, Time, Number) {
   console.log("Creating: ", Name);
   const Reservation = Parse.Object.extend("Reservation");
   const reservation = new Reservation();
@@ -12,6 +12,14 @@ export const createReservation = (Name, Date, Time, Number) => {
   reservation.set("date", Date);
   reservation.set("time", Time);
   reservation.set("number", Number);
+  const currentUser = await Parse.User.currentAsync();
+  if (currentUser === null) {
+    reservation.set("username", '');
+  }
+  else {
+    reservation.set("username", currentUser.get('username'));
+  }
+
   return reservation.save().then((result) => {
     // returns new Reservation object
     return result;

@@ -4,6 +4,7 @@ import { Home } from '../views/Home';
 import { About } from '../views/About';
 import { Menu } from '../views/Menu';
 import { Reservations } from '../views/Reservations';
+import { Feedback } from '../views/Feedback';
 import { Login } from '../views/Login';
 import { NavBar } from '../components/NavBar';
 import AuthRegister from "../components/Auth/AuthRegister";
@@ -26,6 +27,7 @@ export const Routes = () => {
         </Route>
         <Route exact path="/About" component={About} />
         <Route path="/protect" component={ReservationProtect} />
+        <Route exact path="/Feedback" component={Feedback} />
         <Route exact path="/Menu" component={Menu} />
         <Route exact path="/Register" component={AuthRegister} />
         <Route exact path="/Login" component={Login} />

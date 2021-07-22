@@ -34,12 +34,9 @@ h2.subtitle {
 
 .info p {
   text-decoration: none;
-  display: block;
-  padding: 2em;
-  background: rgb(124, 130, 161);
-  color: white;
-  border-style: groove;
-  text-align: left;
+  color: rgb(156, 125, 125);
+  border-style: none;
+  background-color: aliceblue;
 }
 
 /*list of menu items*/

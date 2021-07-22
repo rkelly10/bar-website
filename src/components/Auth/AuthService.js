@@ -45,6 +45,7 @@ export const doUserLogIn = async function (username, password) {
     .catch((error) => {
       // Error can be caused by wrong parameters or lack of Internet connection
       alert('Username and password combination not recognized, please enter correct username and password.', error.message);
+      refreshPage();
       return false;
     });
 };
@@ -78,3 +79,8 @@ export const getCurrentUser = async function () {
     });
 };
 
+export const getCurrentUserName = async function () {
+  const currentUser = await Parse.User.currentAsync()
+  const uname = currentUser.get("username")
+  return uname
+};
