@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css';
+import FeedbackList from '../../components/Main/FeedbackList';
 import Parent from "../../services/CheersParent.js";
 import bar from './home_bar.jpg'; 
 
@@ -21,6 +22,7 @@ const Home = props => {
       </h2>
       <Parent />
       <hr />
+      <FeedbackList/>
     </div>
     <main >
       <article>
